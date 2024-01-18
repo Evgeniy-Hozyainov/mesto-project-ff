@@ -7,7 +7,9 @@ const placesList = document.querySelector('.places__list')
 // @todo: Функция создания карточки
 function createCardDOM({ name, link }, fnDeleteCard) {
     const card = cardTemplate.querySelector('.card').cloneNode(true)
-    card.querySelector('.card__image').src = link
+    const img = card.querySelector('.card__image')
+    img.src = link
+    img.alt = name
     card.querySelector('.card__title').textContent = name
     card.querySelector('.card__delete-button').addEventListener('click', fnDeleteCard)
 
