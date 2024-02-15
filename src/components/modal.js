@@ -4,8 +4,7 @@ function closeOnEsc(evt) {
   if (evt.key === "Escape") {
     const openedPopup = document.querySelector(".popup_is-opened");
     if (openedPopup) {
-      openedPopup.classList.remove("popup_is-opened");
-      document.removeEventListener("keydown", closeOnEsc);
+      closeModal(openedPopup);
     }
   }
 }
@@ -27,7 +26,7 @@ function openModal(modal) {
  */
 function closeModal(modal) {
   modal.classList.remove("popup_is-opened");
-  window.removeEventListener("keydown", closeOnEsc);
+  document.removeEventListener("keydown", closeOnEsc);
 }
 
 export { openModal, closeModal };

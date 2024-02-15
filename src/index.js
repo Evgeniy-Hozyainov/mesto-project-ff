@@ -31,11 +31,9 @@ const popupCaption = popupTypeImage.querySelector(".popup__caption");
 
 // Обработчик клика по изображению карточки.
 function showImage(evt) {
-  const cardTitle = evt.target.closest(".card").querySelector(".card__title");
-
   popupImage.src = evt.target.src;
   popupImage.alt = evt.target.alt;
-  popupCaption.textContent = cardTitle.textContent;
+  popupCaption.textContent = evt.target.alt;
 
   openModal(popupTypeImage);
 }
