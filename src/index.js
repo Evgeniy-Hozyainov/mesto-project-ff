@@ -1,6 +1,6 @@
 import initialCards from "./components/cards.js";
 import { createCardDOM, deleteCard, likeCard } from "./components/card.js";
-import { openModal, closeModal } from "./components/modal.js";
+import { openModal, closeModal, handleModalCloseClick } from "./components/modal.js";
 
 // Import CSS file
 import "./pages/index.css";
@@ -92,14 +92,7 @@ document.querySelector(".profile__add-button").addEventListener("click", () => {
 
 // Закрывать модальные окна по клику на оверлей или кнопку [X]
 document.querySelectorAll(".popup").forEach((popup) => {
-  popup.addEventListener("click", (evt) => {
-    if (
-      evt.target.classList.contains("popup") ||
-      evt.target.classList.contains("popup__close")
-    ) {
-      closeModal(popup);
-    }
-  });
+  popup.addEventListener("click", handleModalCloseClick);
 });
 
 profileForm.addEventListener("submit", handleEditProfileFormSubmit);

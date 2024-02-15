@@ -29,4 +29,17 @@ function closeModal(modal) {
   document.removeEventListener("keydown", closeOnEsc);
 }
 
-export { openModal, closeModal };
+/**
+ * Обрабатывает клик по модальному окну и закрывает его, если 
+ * клик произошел по области с классом "popup" или "popup__close".
+ *
+ * @param {MouseEvent} evt - Объект события, который передается обработчику событий.
+ */
+function handleModalCloseClick(evt) {
+  if (["popup", "popup__close"].some(className =>
+      evt.target.classList.contains(className))) {
+    closeModal(evt.currentTarget);
+  }
+}
+
+export { openModal, closeModal, handleModalCloseClick };
