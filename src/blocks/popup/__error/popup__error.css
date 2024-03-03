@@ -1,0 +1,7 @@
+.popup__error {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    color: red;
+    font-size: 12px;
+}
