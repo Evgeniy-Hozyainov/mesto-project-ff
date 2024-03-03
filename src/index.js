@@ -4,8 +4,8 @@ import {
   closeModal,
   handleModalCloseClick,
 } from "./components/modal.js";
-import { enableValidation, clearValidation } from "./validation.js";
-import * as api from "./api.js";
+import { enableValidation, clearValidation } from "./components/validation.js";
+import * as api from "./components/api.js";
 
 // Import CSS file
 import "./pages/index.css";
