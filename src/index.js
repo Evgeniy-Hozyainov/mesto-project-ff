@@ -99,12 +99,14 @@ function handleFormSubmit(
   submitButton.disabled = true;
 
   apiMethod(data)
-    .then(onSuccess)
+    .then((result) => {
+      onSuccess(result);
+      closeModalFunc();
+    })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
-      closeModalFunc();
       // Разблокируем кнопку отправки формы
       // и меняем её текст, после загрузки данных.
       submitButton.textContent = defaultSubmitButtonText;

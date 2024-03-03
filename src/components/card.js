@@ -1,4 +1,11 @@
+// Содержимое <template id="card-template">
+// для дальнейшего клонирования и создания карточек
 const cardTemplate = document.getElementById("card-template").content;
+
+// Функция клонирует и возвращает DOM карточки.
+function getCardTemplate() {
+  return cardTemplate.querySelector(".card").cloneNode(true);
+}
 
 /**
  * Создание DOM элемента карточки.
@@ -13,7 +20,7 @@ const cardTemplate = document.getElementById("card-template").content;
 function createCardDOM(cardData, fnDeleteCard, fnLikeCard, fnShowImage, userId) {
   const { _id, name, link, likes, owner } = cardData;
 
-  const card = cardTemplate.querySelector(".card").cloneNode(true);
+  const card = getCardTemplate();
   card.dataset.cardId = _id;
 
   const img = card.querySelector(".card__image");
